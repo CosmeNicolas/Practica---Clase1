@@ -1,0 +1,40 @@
+ body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #0088ff;
+    }
+
+    .titulo {
+      color: rgb(7, 7, 102);
+    }
+    #idh2 {
+      color: rgb(64, 135, 206);
+      text-align: center;
+      border: 2px solid rgb(18, 17, 17);
+      border-radius: 10px;
+    }
+  
+    button
+    {
+      background-color: #0088ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+
+.contenedor-btn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin-top: 20px;
+    
+
+}

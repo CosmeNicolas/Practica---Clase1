@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicios de Objetos en JavaScript</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="../js/app.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Ejercicios de Objetos en JavaScript</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html#variables">Variables y Tipos de Datos</a>
+          </li>
+          <li><a href="../index.html#operadores">Operadores</a></li>
+          <li>
+            <a href="../index.html#estructuras">Estructuras de Control</a>
+          </li>
+          <li><a href="../index.html#funciones">Funciones</a></li>
+          <li><a href="../index.html#objetos">Objetos y Arrays</a></li>
+          <li><a href="./arrays.html">Ejercicios arrays</a></li>
+          <li><a href="./objects.html">Ejercicios objetos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Ejercicio 1: Acceder a propiedades de un objeto</h2>
+      <p>
+        Crea un objeto llamado <code>auto</code> con las propiedades
+        <b>marca</b>, <b>modelo</b> y <b>año</b>. Muestra por consola el modelo
+        del auto.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(1)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-1">
+// Tu código aquí
+const auto = {
+    marca: "Toyota",
+    modelo: "Corolla",
+    año: 2020
+};
+console.log(auto.modelo); // "Corolla"
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 2: Modificar propiedades de un objeto</h2>
+      <p>
+        Crea un objeto <code>persona</code> con las propiedades <b>nombre</b> y
+        <b>edad</b>. Cambia el valor de la edad y agrega una nueva propiedad
+        <b>profesion</b>.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(2)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-2">
+// Tu código aquí
+let persona = {
+    nombre: "Ana",
+    edad: 25
+};
+persona.edad = 26;
+persona.profesion = "Ingeniera";
+console.log(persona);
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 3: Destructuring de objetos</h2>
+      <p>
+        Dado el siguiente objeto <code>libro</code>, usa destructuring para
+        extraer las propiedades <b>titulo</b> y <b>autor</b> en variables
+        independientes.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(3)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-3">
+// Tu código aquí
+const libro = {
+    titulo: "Cien años de soledad",
+    autor: "Gabriel García Márquez",
+    año: 1967
+};
+const { titulo, autor } = libro;
+console.log(titulo); // "Cien años de soledad"
+console.log(autor);  // "Gabriel García Márquez"
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 4: Array de objetos</h2>
+      <p>
+        Crea un array llamado <code>alumnos</code> que contenga tres objetos,
+        cada uno con las propiedades <b>nombre</b> y <b>nota</b>. Muestra por
+        consola el nombre del alumno con la nota más alta.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(4)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-4">
+// Tu código aquí
+const alumnos = [
+    { nombre: "Lucas", nota: 8 },
+    { nombre: "Sofía", nota: 9 },
+    { nombre: "Martín", nota: 7 }
+];
+let mejor = alumnos[0];
+for (let alumno of alumnos) {
+    if (alumno.nota > mejor.nota) {
+        mejor = alumno;
+    }
+}
+console.log(mejor.nombre); // "Sofía"
+        </pre
+      >
+    </section>
+  </body>
+</html>

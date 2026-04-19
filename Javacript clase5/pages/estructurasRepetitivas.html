@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicios de Estructuras Repetitivas en JavaScript</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="../js/app.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Ejercicios de Estructuras Repetitivas en JavaScript</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html#variables">Variables y Tipos de Datos</a>
+          </li>
+          <li><a href="../index.html#operadores">Operadores</a></li>
+          <li>
+            <a href="../index.html#estructuras">Estructuras de Control</a>
+          </li>
+          <li><a href="../index.html#funciones">Funciones</a></li>
+          <li><a href="../index.html#objetos">Objetos y Arrays</a></li>
+          <li>
+            <a href="estructurasDeControl.html"
+              >Ejercicios estructuras de control</a
+            >
+          </li>
+          <li>
+            <a href="./estructurasRepetitivas.html"
+              >Ejercicios estructuras repetitivas</a
+            >
+          </li>
+          <li><a href="./arrays.html">Ejercicios arrays</a></li>
+          <li><a href="./objects.html">Ejercicios objetos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Ejercicio 1: for clásico</h2>
+      <p>
+        Utiliza un <b>for</b> para mostrar por consola los números del 1 al 5.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(1)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-1">
+// Tu código aquí
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 2: while</h2>
+      <p>
+        Usa un <b>while</b> para mostrar por consola los números del 5 al 1 (en
+        orden descendente).
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(2)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-2">
+// Tu código aquí
+let n = 5;
+while (n >= 1) {
+    console.log(n);
+    n--;
+}
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 3: do...while</h2>
+      <p>
+        Usa un <b>do...while</b> para mostrar por consola los números del 1 al
+        3.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(3)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-3">
+// Tu código aquí
+let x = 1;
+do {
+    console.log(x);
+    x++;
+} while (x <= 3);
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 4: Recorrer un array con for...of</h2>
+      <p>
+        Crea un array <code>animales</code> con "perro", "gato" y "loro". Usa
+        <b>for...of</b> para mostrar cada animal por consola.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(4)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-4">
+// Tu código aquí
+let animales = ["perro", "gato", "loro"];
+for (let animal of animales) {
+    console.log(animal);
+}
+        </pre
+      >
+    </section>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicios de Estructuras de Control en JavaScript</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="../js/app.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Ejercicios de Estructuras de Control en JavaScript</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html#variables">Variables y Tipos de Datos</a>
+          </li>
+          <li><a href="../index.html#operadores">Operadores</a></li>
+          <li>
+            <a href="../index.html#estructuras">Estructuras de Control</a>
+          </li>
+          <li><a href="../index.html#funciones">Funciones</a></li>
+          <li><a href="../index.html#objetos">Objetos y Arrays</a></li>
+          <li>
+            <a href="./estructurasDeControl.html"
+              >Ejercicios estructuras de control</a
+            >
+          </li>
+          <li>
+            <a href="./estructurasRepetitivas.html"
+              >Ejercicios estructuras repetitivas</a
+            >
+          </li>
+          <li><a href="./arrays.html">Ejercicios arrays</a></li>
+          <li><a href="./objects.html">Ejercicios objetos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Ejercicio 1: if simple</h2>
+      <p>
+        Declara una variable <code>edad</code> y muestra por consola "Es mayor
+        de edad" si es mayor o igual a 18.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(1)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-1">
+// Tu código aquí
+let edad = 20;
+if (edad >= 18) {
+    console.log("Es mayor de edad");
+}
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 2: if...else</h2>
+      <p>
+        Declara una variable <code>nota</code> y muestra "Aprobado" si es mayor
+        o igual a 6, y "Desaprobado" en caso contrario.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(2)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-2">
+// Tu código aquí
+let nota = 5;
+if (nota >= 6) {
+    console.log("Aprobado");
+} else {
+    console.log("Desaprobado");
+}
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 3: if anidado</h2>
+      <p>
+        Declara una variable <code>usuario</code> y <code>password</code>. Si el
+        usuario es "admin" y el password es "1234", muestra "Acceso concedido",
+        si no, muestra "Acceso denegado".
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(3)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-3">
+// Tu código aquí
+let usuario = "admin";
+let password = "1234";
+if (usuario === "admin") {
+    if (password === "1234") {
+        console.log("Acceso concedido");
+    } else {
+        console.log("Acceso denegado");
+    }
+} else {
+    console.log("Acceso denegado");
+}
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 4: Operador ternario</h2>
+      <p>
+        Declara una variable <code>numero</code> y usa el operador ternario para
+        mostrar "Par" si es par o "Impar" si es impar.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(4)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-4">
+// Tu código aquí
+let numero = 7;
+let resultado = (numero % 2 === 0) ? "Par" : "Impar";
+console.log(resultado);
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 5: switch case</h2>
+      <p>
+        Declara una variable <code>dia</code> (número del 1 al 3) y usa
+        <b>switch</b> para mostrar "Lunes", "Martes" o "Miércoles" según
+        corresponda. Si no es ninguno de esos valores, muestra "Otro día".
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(5)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-5">
+// Tu código aquí
+let dia = 2;
+switch (dia) {
+    case 1:
+        console.log("Lunes");
+        break;
+    case 2:
+        console.log("Martes");
+        break;
+    case 3:
+        console.log("Miércoles");
+        break;
+    default:
+        console.log("Otro día");
+}
+        </pre
+      >
+    </section>
+
+    <section>
+      <h2>Ejercicio 6: Uso de booleanos para asignar un valor</h2>
+      <p>
+        Declara una variable <code>edad</code> y otra variable
+        <code>esMayor</code> que sea <b>true</b> si la edad es mayor o igual a
+        18, o <b>false</b> en caso contrario. Muestra el valor de
+        <code>esMayor</code> por consola.
+      </p>
+      <button class="btn-solucion" onclick="mostrarSolucion(6)">
+        Solución
+      </button>
+      <pre class="solucion" id="solucion-6">
+// Tu código aquí
+let edad = 16;
+let esMayor = edad >= 18;
+console.log(esMayor); // false
+    </pre
+      >
+    </section>
+  </body>
+</html>

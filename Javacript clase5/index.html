@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Repaso de Conceptos Básicos de JavaScript</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <h1>Repaso de Conceptos Básicos de JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="#variables">Variables y Tipos de Datos</a></li>
+                <li><a href="#operadores">Operadores</a></li>
+                <li><a href="#estructuras">Estructuras de Control</a></li>
+                <li><a href="#funciones">Funciones</a></li>
+                <li><a href="#objetos">Objetos y Arrays</a></li>
+                <li><a href="./pages/estructurasDeControl.html">Ejercicios estructuras de control</a></li>
+                <li><a href="./pages/estructurasRepetitivas.html">Ejercicios estructuras repetitivas</a></li>
+                <li><a href="./pages/arrays.html">Ejercicios arrays</a></li>
+                <li><a href="./pages/objects.html">Ejercicios objetos</a></li>
+            </ul>
+        </nav>
+      </header>  
+    <h1>Conceptos Básicos de JavaScript</h1>
+
+    <section>
+        <h2 id="variables">1. Variables y Tipos de Datos</h2>
+        <p>
+            En JavaScript existen tres formas principales de declarar variables: <b>var</b>, <b>let</b> y <b>const</b>.
+        </p>
+        <ul>
+            <li>
+                <b>var</b>: Tiene <b>scope de función</b> y es <b>hoisted</b> (se eleva su declaración al inicio de la función o script). Sin embargo, puede causar errores difíciles de detectar y ya no se recomienda su uso.
+            </li>
+            <li>
+                <b>let</b>: Tiene <b>scope de bloque</b> (solo existe dentro de las llaves donde se declara). No permite redeclaración en el mismo bloque y es la forma recomendada para variables que cambian su valor.
+            </li>
+            <li>
+                <b>const</b>: También tiene <b>scope de bloque</b> y su valor no puede ser reasignado. Sin embargo, si se usa con objetos o arrays, sus propiedades o elementos sí pueden cambiar.
+            </li>
+        </ul>
+        <pre>
+let nombre = "Juan"; // Puede cambiar su valor
+const edad = 25;     // No puede reasignarse
+var esEstudiante = true; // No recomendado
+        </pre>
+        <p><b>Hoisting</b> es el comportamiento por el cual las declaraciones de variables y funciones se mueven al inicio de su contexto antes de ejecutar el código.</p>
+        <p>
+            <b>Hoisting en js:</b> Solo <code>var</code> es hoisted completamente (declaración y valor <code>undefined</code>), <code>let</code> y <code>const</code> solo son hoisted en la declaración pero no pueden usarse antes de ser declaradas.
+        </p>
+        <pre>
+// Ejemplo de hoisting
+console.log(a); // undefined
+var a = 5;
+
+// console.log(b); // Error: Cannot access 'b' before initialization
+let b = 10;
+        </pre>
+        <p>
+            <b>¿Por qué no usar var?</b> Porque puede provocar errores de scope y hoisting difíciles de depurar. Se recomienda usar <code>let</code> y <code>const</code>.
+        </p>
+        <h3>Tipos de datos</h3>
+        <ul>
+            <li><b>Primitivos:</b> string, number, boolean, null, undefined, symbol, bigint</li>
+            <li><b>No primitivos:</b> object, array, function</li>
+        </ul>
+        <pre>
+let texto = "Hola";      // string
+let numero = 42;         // number
+let esActivo = false;    // boolean
+let nada = null;         // null
+let indefinido;          // undefined
+let simbolo = Symbol();  // symbol
+let persona = { nombre: "Ana" }; // object
+let lista = [1,2,3];     // array (object)
+        </pre>
+        <p>
+            <b>const en primitivos:</b> No se puede reasignar el valor.<br>
+            <b>const en objetos/arrays:</b> No se puede reasignar la variable, pero sí modificar sus propiedades o elementos.
+        </p>
+        <pre>
+const x = 5;
+// x = 10; // Error
+
+const arr = [1,2,3];
+arr.push(4); // Esto sí es válido
+        </pre>
+    </section>
+
+    <section id="operadores">
+        <h2>2. Operadores</h2>
+        <p>
+            Los operadores permiten realizar operaciones matemáticas, lógicas y de comparación.
+        </p>
+        <pre>
+let suma = 5 + 3;           // Operador aritmético
+let esMayor = edad > 18;    // Operador de comparación
+let esIgual = a === b;      // Comparación estricta
+let resultado = cond ? "Sí" : "No"; // Operador ternario
+        </pre>
+    </section>
+
+<section id="estructuras">
+        <h2>3. Estructuras de Control</h2>
+        <p>
+            <b>if</b>: Permite ejecutar código si se cumple una condición.<br>
+            <b>if anidado</b>: Un if dentro de otro.<br>
+            <b>Operador ternario</b>: Forma corta de un if-else.
+        </p>
+        <pre>
+if (esEstudiante) {
+    console.log("Es estudiante");
+} else {
+    console.log("No es estudiante");
+}
+
+// If anidado
+if (edad > 18) {
+    if (esEstudiante) {
+        console.log("Mayor de edad y estudiante");
+    }
+}
+
+// Operador ternario
+let mensaje = edad >= 18 ? "Mayor de edad" : "Menor de edad";
+        </pre>
+        <h3>Booleanos y asignación condicional</h3>
+        <pre>
+let acceso = (edad >= 18); // acceso será true o false según la condición
+        </pre>
+        <h2>4. Estructuras repetitivas</h2>
+        <p>
+            Permiten ejecutar un bloque de código varias veces.
+        </p>
+        <pre>
+// for clásico
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// while
+let contador = 0;
+while (contador < 3) {
+    console.log(contador);
+    contador++;
+}
+
+// do...while
+let num = 0;
+do {
+    console.log(num);
+    num++;
+} while (num < 2);
+        </pre>
+        <h3>Switch case</h3>
+        <p>
+            Permite ejecutar diferentes bloques de código según el valor de una variable.
+        </p>
+        <pre>
+let dia = 3;
+switch (dia) {
+    case 1:
+        console.log("Lunes");
+        break;
+    case 2:
+        console.log("Martes");
+        break;
+    case 3:
+        console.log("Miércoles");
+        break;
+    default:
+        console.log("Otro día");
+}
+        </pre>
+    </section>
+
+    <section id="funciones">
+        <h2>5. Funciones</h2>
+        <p>
+            Hay varias formas de declarar funciones en JavaScript:
+        </p>
+        <ul>
+            <li>
+                <b>Declaración tradicional:</b>
+                <pre>
+function saludar(nombre) {
+    return "Hola, " + nombre;
+}
+                </pre>
+            </li>
+            <li>
+                <b>Función anónima:</b>
+                <pre>
+const sumar = function(a, b) {
+    return a + b;
+};
+                </pre>
+            </li>
+            <li>
+                <b>Función flecha (arrow function):</b>
+                <pre>
+const multiplicar = (a, b) => a * b;
+                </pre>
+            </li>
+        </ul>
+        <p>
+            Las funciones flecha no tienen su propio <code title="Es una palabra clave que hace referencia al objeto desde el cual se invoca una función">this</code> y son ideales para funciones cortas.<br>
+        </p>
+    </section>
+
+    <section>
+        <h2>6. Objetos y Arrays</h2>
+        <h3 id="objetos">Objetos</h3>
+        <p>
+            Un objeto es una colección de pares clave-valor.
+        </p>
+        <pre>
+let persona = {
+    nombre: "Luis",
+    edad: 30
+};
+console.log(persona.nombre); // "Luis"
+        </pre>
+        <h3>Destructuring</h3>
+        <p>
+            Permite extraer valores de objetos o arrays de forma sencilla.
+        </p>
+        <pre>
+const { nombre, edad } = persona;
+console.log(nombre); // "Luis"
+
+let numeros = [1, 2, 3];
+const [primero, segundo] = numeros;
+console.log(primero); // 1
+        </pre>
+        <h3 id="arrays">Arrays y métodos básicos</h3>
+        <pre>
+let numeros = [1, 2, 3, 4, 5];
+numeros.push(6);    // Agrega al final
+numeros.pop();      // Quita el último
+numeros.unshift(0); // Agrega al inicio
+numeros.shift();    // Quita el primero
+let parte = numeros.slice(1, 3); // Extrae una parte (no modifica el original)
+numeros.splice(2, 1); // Elimina 1 elemento desde el índice 2
+let dobles = numeros.map(n => n * 2); // Crea un nuevo array con los valores multiplicados por 2
+let mayores = numeros.filter(n => n > 2); // Nuevo array con los mayores a 2
+let suma = numeros.reduce((acc, n) => acc + n, 0); // Suma todos los elementos
+        </pre>
+    </section>
+    <section id="arrays-metodos">
+        <h2>Métodos para recorrer arrays</h2>
+        <p>
+            Existen varias formas de recorrer un array y realizar acciones sobre sus elementos:
+        </p>
+        <ul>
+            <li>
+                <b>forEach</b>: Ejecuta una función por cada elemento. Recibe como parámetro una función que recibe (elemento, índice, array).
+                <pre>
+let numeros = [1, 2, 3];
+numeros.forEach(function(elemento, indice, array) {
+    console.log(elemento, indice);
+});
+                </pre>
+            </li>
+            <li>
+                <b>for...of</b>: Permite recorrer los valores de un array.
+                <pre>
+for (let valor of numeros) {
+    console.log(valor);
+}
+                </pre>
+            </li>
+            <li>
+                <b>map</b>: Crea un nuevo array aplicando una función a cada elemento. Recibe una función con (elemento, índice, array).
+                <pre>
+let dobles = numeros.map(function(elemento) {
+    return elemento * 2;
+});
+console.log(dobles); // [2, 4, 6]
+                </pre>
+            </li>
+            <li>
+                <b>filter</b>: Crea un nuevo array con los elementos que cumplen una condición.
+                <pre>
+let mayores = numeros.filter(n => n > 1);
+console.log(mayores); // [2, 3]
+                </pre>
+            </li>
+            <li>
+                <b>reduce</b>: Reduce el array a un solo valor. Recibe una función con (acumulador, elemento, índice, array) y un valor inicial.
+                <pre>
+let suma = numeros.reduce((acc, n) => acc + n, 0);
+console.log(suma); // 6
+                </pre>
+            </li>
+        </ul>
+    </section>
+</body>
+<script type="module" src="js/control.js"></script>
+</html>
