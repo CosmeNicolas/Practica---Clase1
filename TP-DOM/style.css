@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    min-height: 100vh;
+
+    /* 👇 CLAVE */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    background-color: #f4f4f4;
+
+    /* 👇 hace que ocupe el espacio del medio */
+    flex: 1;
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+input, button {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+button {
+    background-color: #004271;
+    color: black;
+    border: none;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #005699;
+    color: white;
+}
+
+.cargaNotas {
+   color: white;
+   border-radius: 4px;
+   padding: 5px 10px;
+}
+
+#resultadoBusqueda {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#estadoGeneral {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.tabs {
+    margin: 10px 0;
+}
+.tab-btn {
+    background: #eee;
+    border: 1px solid #871010;
+    padding: 6px 10px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+.tab-btn.active {
+    background: #004271;
+    color: #fff;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+#tablaAlumnos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    background: #fff;
+}
+#tablaAlumnos th, #tablaAlumnos td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    
+}
+#tablaAlumnos th {
+    background: #f0f0f0;
+}
+
