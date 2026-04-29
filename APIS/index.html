@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokédex JS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="pokedex">
+    <header class="pokedex-header">
+      <div>
+        <h1>Pokédex</h1>
+        <p>Busca y descubre Pokémon con Fetch API</p>
+      </div>
+
+      <form id="searchForm" class="search-box">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Buscar Pokémon..."
+        />
+        <button type="submit">Buscar</button>
+      </form>
+    </header>
+
+    <section class="controls">
+      <button id="loadMoreBtn">Cargar más Pokémon</button>
+    </section>
+
+    <section id="pokemonContainer" class="pokemon-grid"></section>
+  </main>
+
+  <script src="api.js"></script>
+</body>
+</html>
