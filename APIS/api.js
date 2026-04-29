@@ -4,7 +4,7 @@ const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
 
 let offset = 0;
-const limit = 12;
+const limit = 2;
 
 const API_URL = "https://pokeapi.co/api/v2/pokemon";
 
@@ -12,6 +12,7 @@ const obtenerPokemones = async () => {
   try {
     const respuesta = await fetch(`${API_URL}?limit=${limit}&offset=${offset}`);
     const data = await respuesta.json();
+    console.log(data)
 
     const promesas = data.results.map((pokemon) =>
       fetch(pokemon.url).then((res) => res.json())
@@ -28,6 +29,7 @@ const obtenerPokemones = async () => {
   }
 };
 
+/* Buscar Pokemon diferenciando por minusculas y mayusculas  */
 const buscarPokemon = async (nombre) => {
   try {
     pokemonContainer.innerHTML = "";
