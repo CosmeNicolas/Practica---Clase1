@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #111827, #1e3a8a, #0f172a);
+  color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 25px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.subtitulo {
+  color: #cbd5e1;
+  margin-bottom: 25px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+input {
+  width: 100%;
+  padding: 13px 15px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px #38bdf8;
+}
+
+.grupo-notas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+button {
+  margin-top: 8px;
+  padding: 14px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(56, 189, 248, 0.35);
+}
+
+.btn-limpiar {
+  background: linear-gradient(135deg, #ef4444, #991b1b);
+}
+
+.btn-limpiar:hover {
+  box-shadow: 0 12px 25px rgba(239, 68, 68, 0.35);
+}
+
+.libreta {
+  min-height: 420px;
+}
+
+#alumnoMostrado {
+  margin-bottom: 25px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.5);
+  color: #facc15;
+  font-weight: bold;
+}
+
+.alumno-vacio {
+  color: #cbd5e1 !important;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+thead {
+  background: rgba(56, 189, 248, 0.25);
+}
+
+th,
+td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+tbody tr {
+  background: rgba(15, 23, 42, 0.35);
+  transition: 0.2s;
+}
+
+tbody tr:hover {
+  background: rgba(56, 189, 248, 0.18);
+}
+
+.aprobado {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.desaprobado {
+  color: #f87171;
+  font-weight: bold;
+}
+
+.mensaje-vacio {
+  margin-top: 18px;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+@media (max-width: 850px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+}
