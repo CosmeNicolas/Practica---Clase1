@@ -4,7 +4,7 @@ const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
 
 let offset = 0;
-const limit = 2;
+const limit = 15;
 
 const API_URL = "https://pokeapi.co/api/v2/pokemon";
 
