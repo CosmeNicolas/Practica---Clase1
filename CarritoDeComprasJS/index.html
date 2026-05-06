@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Carrito de Compras</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Carrito de Compras</h1>
+
+    <nav>
+      
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="product-list">
+      <h2>Productos Disponibles</h2>
+
+      <div id="productsContainer" class="products"></div>
+    </section>
+
+    <section class="cart">
+
+      <h2>Carrito de Compras</h2>
+
+      <ul id="cartItems" class="cart-items"></ul>
+
+      <p class="cart-total">
+        Total: $<span id="totalPrice">0.00</span>
+      </p>
+
+      <button id="checkoutBtn" class="checkout-btn">
+        Finalizar Compra
+      </button>
+
+      <button id="clearCartBtn" class="clear-btn">
+        Vaciar Carrito
+      </button>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Carrito Adidas Mini Pelotas</p>
+  </footer>
+
+  <script type="module" src="./carrito.js"></script>
+
+</body>
+</html>
