@@ -20,6 +20,25 @@
   <main class="container">
 
     <section class="product-list">
+
+      <section class="add-product-section">
+  <h2>Agregar Producto</h2>
+
+  <form id="productForm" class="product-form">
+    <input type="text" id="nombreInput" placeholder="Nombre del producto" required>
+
+    <input type="number" id="precioInput" placeholder="Precio" required>
+
+    <input type="text" id="descripcionInput" placeholder="Descripción" required>
+
+    <input type="text" id="imagenInput" placeholder="Link de imagen" required>
+
+    <button type="submit">Agregar Producto</button>
+  </form>
+
+
+</section>
+
       <h2>Productos Disponibles</h2>
 
       <div id="productsContainer" class="products"></div>
@@ -29,7 +48,9 @@
 
       <h2>Carrito de Compras</h2>
 
-      <ul id="cartItems" class="cart-items"></ul>
+      <ul id="cartItems" class="cart-items">
+        <!-- aca van los productos de venta -->
+      </ul>
 
       <p class="cart-total">
         Total: $<span id="totalPrice">0.00</span>

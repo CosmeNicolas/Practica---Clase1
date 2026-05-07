@@ -1,17 +1,19 @@
-// Importamos el array de productos desde productos.js
 import { productos } from "./productos.js";
 
-// Array donde se guardan los productos agregados al carrito
 let carrito = [];
 
-// Capturamos elementos del HTML
 const productsContainer = document.getElementById("productsContainer");
 const cartItems = document.getElementById("cartItems");
 const totalPrice = document.getElementById("totalPrice");
 const checkoutBtn = document.getElementById("checkoutBtn");
 const clearCartBtn = document.getElementById("clearCartBtn");
 
-// Renderiza los productos en pantalla
+const productForm = document.getElementById("productForm");
+const nombreInput = document.getElementById("nombreInput");
+const precioInput = document.getElementById("precioInput");
+const descripcionInput = document.getElementById("descripcionInput");
+const imagenInput = document.getElementById("imagenInput");
+
 function mostrarProductos() {
   productsContainer.innerHTML = "";
 
@@ -37,7 +39,24 @@ function mostrarProductos() {
   });
 }
 
-// Agrega un producto al carrito
+function agregarNuevoProducto(event) {
+  event.preventDefault();
+
+  const nuevoProducto = {
+    id: Date.now(),
+    nombre: nombreInput.value.trim(),
+    precio: Number(precioInput.value),
+    descripcion: descripcionInput.value.trim(),
+    imagen: imagenInput.value.trim()
+  };
+
+  productos.push(nuevoProducto);
+
+  mostrarProductos();
+
+  productForm.reset();
+}
+
 function agregarAlCarrito(idProducto) {
   const productoEncontrado = productos.find((producto) => producto.id === idProducto);
 
@@ -57,7 +76,6 @@ function agregarAlCarrito(idProducto) {
   mostrarCarrito();
 }
 
-// Renderiza el carrito actualizado
 function mostrarCarrito() {
   cartItems.innerHTML = "";
 
@@ -83,19 +101,15 @@ function mostrarCarrito() {
       </div>
     `;
 
-    const btnRestar = li.querySelector(".btn-restar");
-    const btnSumar = li.querySelector(".btn-sumar");
-    const btnEliminar = li.querySelector(".remove-btn");
-
-    btnRestar.addEventListener("click", () => {
+    li.querySelector(".btn-restar").addEventListener("click", () => {
       disminuirCantidad(item.id);
     });
 
-    btnSumar.addEventListener("click", () => {
+    li.querySelector(".btn-sumar").addEventListener("click", () => {
       aumentarCantidad(item.id);
     });
 
-    btnEliminar.addEventListener("click", () => {
+    li.querySelector(".remove-btn").addEventListener("click", () => {
       eliminarProducto(item.id);
     });
 
@@ -105,18 +119,14 @@ function mostrarCarrito() {
   calcularTotal();
 }
 
-// Aumenta la cantidad de un producto dentro del carrito
 function aumentarCantidad(idProducto) {
   const producto = carrito.find((item) => item.id === idProducto);
 
-  if (producto) {
-    producto.cantidad++;
-  }
+  if (producto) producto.cantidad++;
 
   mostrarCarrito();
 }
 
-// Disminuye la cantidad de un producto
 function disminuirCantidad(idProducto) {
   const producto = carrito.find((item) => item.id === idProducto);
 
@@ -132,13 +142,11 @@ function disminuirCantidad(idProducto) {
   mostrarCarrito();
 }
 
-// Elimina completamente un producto del carrito
 function eliminarProducto(idProducto) {
   carrito = carrito.filter((item) => item.id !== idProducto);
   mostrarCarrito();
 }
 
-// Calcula el total final del carrito
 function calcularTotal() {
   const total = carrito.reduce((acumulador, item) => {
     return acumulador + item.precio * item.cantidad;
@@ -147,13 +155,11 @@ function calcularTotal() {
   totalPrice.textContent = total.toLocaleString();
 }
 
-// Vacía todo el carrito
 function vaciarCarrito() {
   carrito = [];
   mostrarCarrito();
 }
 
-// Finaliza la compra
 function finalizarCompra() {
   if (carrito.length === 0) {
     alert("El carrito está vacío.");
@@ -164,10 +170,9 @@ function finalizarCompra() {
   vaciarCarrito();
 }
 
-// Eventos de botones principales
+productForm.addEventListener("submit", agregarNuevoProducto);
 checkoutBtn.addEventListener("click", finalizarCompra);
 clearCartBtn.addEventListener("click", vaciarCarrito);
 
-// Inicializamos la app
 mostrarProductos();
 mostrarCarrito();
